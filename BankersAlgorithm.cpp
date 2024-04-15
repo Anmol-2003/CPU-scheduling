@@ -3,11 +3,9 @@ using namespace std;
 
 int main()
 {
-    // Number of processes and resources
     int numProcesses = 5;
     int numResources = 3;
 
-    // Allocation, Maximum, and Available matrices
     int allocation[5][3] = { {0, 1, 0},
                              {2, 0, 0},
                              {3, 0, 2},
@@ -19,11 +17,12 @@ int main()
                           {9, 0, 2},
                           {2, 2, 2},
                           {4, 3, 3} };
-
     int available[3] = {3, 3, 2};
 
-    // Arrays to track process status and safe sequence
-    int finish[numProcesses] = {0};
+    int finish[numProcesses];
+    for(int i = 0; i < numProcesses; ++i){
+        finish[i] = 0; 
+    }
     int safeSequence[numProcesses], safeCount = 0;
 
     // Calculate the need matrix
