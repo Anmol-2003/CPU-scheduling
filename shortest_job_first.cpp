@@ -22,7 +22,7 @@ int main(){
     sort(process.begin(), process.end(), compare);
 
     int total = 0; 
-    process[0][2] = 0; // first process doesnt wait
+    process[0][2] = 0; 
     for(int i = 1; i < n; i++){
         process[i][2] = 0; 
         for(int j = 0; j < i; j++){
@@ -32,7 +32,7 @@ int main(){
     }
     float avg_wait_time = (float)total / (float)n;
     total = 0; 
-    process[0][3] = process[0][1]; // TAT = BT for P1
+    process[0][3] = process[0][1]; 
     total += process[0][3];
     for(int i = 1; i < n; i++){
         process[i][3] = process[i][2] + process[i][1]; 
